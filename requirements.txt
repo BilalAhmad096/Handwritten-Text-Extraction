@@ -1,0 +1,7 @@
+editdistance
+lmdb
+matplotlib
+numpy
+opencv-python
+path
+tensorflow
