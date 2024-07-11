@@ -14,8 +14,8 @@ from src.preprocessor import Preprocessor
 class FilePaths:
     """Filenames and paths to data."""
     fn_char_list = './model/charList.txt'
-    fn_summary = '../model/summary.json'
-    fn_corpus = '../data/corpus.txt'
+    fn_summary = './model/summary.json'
+    fn_corpus = './data/corpus.txt'
 
 
 def get_img_height() -> int:
@@ -133,15 +133,15 @@ def validate(model: Model, loader: DataLoaderIAM, line_mode: bool) -> Tuple[floa
     return char_error_rate, word_accuracy
 
 
-def infer(model: Model, fn_img: Path) -> None:
+def infer(model: Model, img_path) -> None:
     """Recognizes text in image provided by file path."""
     # img = cv2.imread(fn_img, cv2.IMREAD_GRAYSCALE)
-    img_path = 'D:/Programming/GitHub/Handwritten Text Extraction/data/bilal.png'
+    # img_path = 'D:/Programming/GitHub/Handwritten-Text-Extraction/data/faraz.png'
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
 
 
-    cv2.imshow('window_name', img) 
-    cv2.waitKey(0)  
+    # cv2.imshow('window_name', img) 
+    # cv2.waitKey(0)  
 
     assert img is not None
 
@@ -171,11 +171,11 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def handwritten_text_extraction():
+def handwritten_text_extraction(img_path):
     args = parse_args()
     decoder_mapping = {'bestpath': DecoderType.BestPath,
                        'beamsearch': DecoderType.BeamSearch,
                        'wordbeamsearch': DecoderType.WordBeamSearch}
     decoder_type = decoder_mapping[args.decoder]
     model = Model(char_list_from_file(), decoder_type, must_restore=True, dump=args.dump)
-    infer(model, args.img_file)
+    infer(model, img_path)
