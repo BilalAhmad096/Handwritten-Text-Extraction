@@ -10,5 +10,6 @@ created on Thu July 11 05:22 2024
 from src.handwritten_text_extraction import handwritten_text_extraction
 
 if __name__ == "__main__":
-    img_path = 'D:/Programming/GitHub/Handwritten-Text-Extraction/data/faraz.png'
+    # img_path = 'D:/Programming/GitHub/Handwritten-Text-Extraction/data/test.png'
+    img_path = './data/test.png'
     handwritten_text_extraction(img_path)
