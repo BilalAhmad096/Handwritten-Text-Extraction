@@ -1,3 +1,12 @@
+# -*- coding:  utf-8 -*-
+"""
+created on Thu July 11 05:22 2024
+
+@author: https://github.com/BilalAhmad096
+
+@project: Handwritten Text Extraction
+"""
+
 import argparse
 import json
 from typing import Tuple, List
