@@ -149,8 +149,8 @@ def infer(model: Model, img_path) -> None:
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
 
 
-    # cv2.imshow('window_name', img) 
-    # cv2.waitKey(0)  
+    cv2.imshow('window_name', img) 
+    cv2.waitKey(0)  
 
     assert img is not None
 
